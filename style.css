@@ -1,0 +1,270 @@
+/* font import */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
+    font-display: swap;
+}
+
+/* reset all padding and margin */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* h1 for to-do app heading */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* todo main container */
+.searchmode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Input field */
+.searchmode input {
+    width: 50%;
+    height: 30px;
+    border: 1.5px solid #6c63fe;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+/* search input when focused */
+.searchmode input:focus {
+    padding-left: 20px;
+}
+
+/* mode image */
+.searchmode img {
+    width: 50px;
+    height: auto;
+}
+
+/* todo plus icon */
+.addTodo {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1000;
+    cursor: pointer;
+    animation: pulse 1.5s infinite;
+}
+/* Add Todo Icon Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* todo popup */
+.popUp {
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 600px;
+    gap: 10px;
+    background-color: #6c63fe;
+    border-radius: 10px;
+}
+
+/* Popup input field */
+.popUp input {
+    width: 400px;
+    height: 30px;
+    border: 1.5px solid #6c63fe;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+/* add button */
+.popUp button {
+    width: 80px;
+    height: 30px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* close btn style */
+.close-btn {
+    position: absolute;
+    top: 10px; /* Adjust to position it appropriately */
+    right: 10px; /* Adjust to position it appropriately */
+    z-index: 500;
+    width: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Style the to-do list items */
+.todoList li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid #ddd;
+    margin: 30px 50px 5px 50px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    gap: 10px; /* Space between elements */
+  
+    
+}
+
+/* Style the tick icon (checkbox) */
+.tickIcon {
+    width: 20px; /* Adjust size as needed */
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Ensure text is centered vertically */
+.todoText {
+    flex-grow: 1; /* Take up remaining space between icons */
+    margin: 0 10px; /* Space between text and icons */
+}
+
+/* Mark item as completed */
+.tickIcon:checked + .todoText {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* Style the delete icon */
+.deleteIcon {
+    width: 30px; /* Adjust size as needed */
+    height: auto;
+    cursor: pointer;
+}
+
+
+/* Container for social icons */
+.icons {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    z-index: 1000;
+    border: 1px solid #6c63fe;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 20%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; /* Stack items horizontally */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    z-index: 200;
+    animation: shake 0.8s infinite;
+}
+
+/* Add Todo Icon Animation */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(0); }
+    75% { transform: translateX(1px); }
+    100% { transform: translateX(0); }
+}
+
+
+
+/* Heading style */
+.icons h2 {
+    padding-right: 20px;
+    color: #6c63fe;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Icon style */
+.icons img {
+    cursor: pointer;
+    width: 30px;
+    height: auto;
+    margin: 5px; 
+    transition: transform 0.3s, box-shadow 0.3s; 
+}
+
+/* Icon hover effect */
+.icons img:hover {
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+
+
+/* Overlay styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark background with opacity */
+    visibility: hidden; /* Hide the overlay initially */
+    z-index: 100; /* Ensure it’s above other content */
+    transition: visibility 0.3s, opacity 0.3s; /* Smooth transition for visibility and opacity */
+}
+
+.overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* darkmode feature */
+.dark-mode {
+    background-color: #121212; /* Dark background color */
+    color: #e0e0e0; /* Light text color */
+    cursor: pointer;
+   
+}
+
+.dark-mode h1, .dark-mode .searchmode input, .dark-mode .popUp {
+    background-color: #1e1e1e; /* Dark background for elements */
+    color: #e0e0e0; /* Light text color */
+    border-color: #333; /* Darker border color */
+}
+
+.dark-mode .todoList li {
+    background-color: #2e2e2e; /* Darker background for todo items */
+    border-color: #444; /* Darker border color for todo items */
+}
+
+.darkModeToggle{
+    
+}
+
+
+@media (max-width: 368px) {
+    .popUp {
+        width: 20%;
+    }
+}

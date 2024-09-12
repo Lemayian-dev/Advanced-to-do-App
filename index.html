@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>TodoList Pro</h1>
+
+    <!-- Search bar -->
+    <div class="searchmode">
+      <input type="text" id="searchInput" placeholder="Search todos..." />
+      <img
+        id="darkModeToggle"
+        src="Images/icons8-moon-96.png"
+        alt="Dark Mode Toggle"
+      />
+    </div>
+
+    <!-- Overlay for popup focus -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- To-do list -->
+    <ul id="todoList" class="todoList"></ul>
+
+    <!-- Popup for adding new todos -->
+    <div class="popUp">
+      <span class="close-btn">X</span>
+      <input type="text" id="todoContent" placeholder="Enter new task" />
+      <button id="addBtn">Add</button>
+    </div>
+
+    <!-- Add todo icon -->
+    <img
+      class="addTodo"
+      src="Images/icons8-plus-50.png"
+      alt="Add todo icon"
+      id="addTodo"
+    />
+
+    <!-- Social icons -->
+    <div class="icons">
+      <h2>Follow me</h2>
+      <a href="https://github.com/Lemayian-dev" target="_blank"
+        ><img src="Images/icons8-github-50.png" alt="GitHub"
+      /></a>
+      <a href="https://www.linkedin.com/in/isaac-lemayian/" target="_blank"
+        ><img src="Images/icons8-linkedin-64.png" alt="LinkedIn"
+      /></a>
+      <a href="https://www.instagram.com/lemayian.izaac/" target="_blank"
+        ><img src="Images/icons8-instagram-64.png" alt="Instagram"
+      /></a>
+      <a href="https://x.com/Zack_lem" target="_blank"
+        ><img src="Images/icons8-twitter-50.png" alt="Twitter"
+      /></a>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
+</html>
